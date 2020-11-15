@@ -49,6 +49,8 @@ html = """
 
 from bs4 import BeautifulSoup
 import lxml
+import requests
+import time
 
 soup = BeautifulSoup(html,'lxml')  #创建 beautifulsoup 对象
 #print(soup.prettify())  #打印 soup 对象的内容，格式化输出
@@ -56,12 +58,24 @@ soup = BeautifulSoup(html,'lxml')  #创建 beautifulsoup 对象
 #print(soup.find_all( class_="ximg", attrs = { 'data-index':picnum }))
 
 global picnum
-for picnum in range(5000):
-    picnum=picnum+1
-    print(picnum)
-    picinformation = soup.find_all( class_="ximg", attrs = { 'data-index':str(picnum)})
-    f = open("locatehtmlbase.txt", "a")
-    f.write(str(picnum)+"*****"+str(picinformation)+"\r\n")
-    f.close()
-
-
+global headers
+headers = {
+	'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0'
+	}
+for picnum in range(6):
+	picnum=picnum+1
+	print(picnum)
+	picinformation = soup.find( class_="ximg", attrs = { 'data-index':str(picnum)}).get("src")
+	#f = open("locatehtmlbase.txt", "a")
+	#f.write(str(picnum)+"*****"+str(picinformation)+"\r\n")
+	#f.close()
+	picurl = picinformation.replace('.jpg!p900','.jpg')
+	print(picurl)
+	name = picurl.replace("https://s.tupianzhibo.cn/image/jpeg/","_")
+	name = name.replace('/','_',5)
+	name = 'D:/r-18picture/' + str(picnum) + name
+	r=requests.get(picurl, headers=headers)
+	with open(name,'wb')as f:
+		f.write(r.content)
+	print(name)
+	time.sleep(5)
