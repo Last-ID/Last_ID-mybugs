@@ -62,7 +62,7 @@ global headers
 headers = {
 	'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0'
 	}
-for picnum in range(6):
+for picnum in range(100):
 	picnum=picnum+1
 	print(picnum)
 	picinformation = soup.find( class_="ximg", attrs = { 'data-index':str(picnum)}).get("src")
@@ -78,4 +78,4 @@ for picnum in range(6):
 	with open(name,'wb')as f:
 		f.write(r.content)
 	print(name)
-	time.sleep(5)
+	time.sleep(2)
