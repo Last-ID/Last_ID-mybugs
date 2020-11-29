@@ -1,0 +1,22 @@
+{
+	"description" : "A clock with Countdown",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "1 1 1"
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"tags" : [ "Technology" ],
+	"title" : "Funny_Countdown",
+	"type" : "web",
+	"visibility" : "public"
+}
