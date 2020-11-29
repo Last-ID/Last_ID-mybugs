@@ -52,7 +52,7 @@ function TimeDown(id, startDateStr, endDateStr) {
 
     else if(totalStartSeconds<=0)
     {
-        document.getElementById(id).innerHTML =" 已经开始 " + EndDays + "day(s) " + EndHours + "h " + EndMinutes + "min "// + EndSeconds + "sec ";
+        document.getElementById(id).innerHTML =" 已经开始 " + EndDays + "天" + EndHours + "h"// + EndMinutes + "min" + EndSeconds + "sec ";
     }
     
     else
@@ -61,7 +61,7 @@ function TimeDown(id, startDateStr, endDateStr) {
         {
             StartDayscut = StartDays - 1;
         }
-        document.getElementById(id).innerHTML = " 尚未开始 还有" + StartDays + "day(s) "// + "(nowHours:" + nowHours+")" + "(进位时刻"+cutTime+":00  输出：" + StartDayscut + "day(s))";
+        document.getElementById(id).innerHTML = " 还有" + StartDays + "天"// + "(nowHours:" + nowHours+")" + "(进位时刻"+cutTime+":00  输出：" + StartDayscut + "day(s))";
     }
     //延迟一秒执行自己
     setTimeout(function () {

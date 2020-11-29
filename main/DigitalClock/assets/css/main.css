@@ -184,10 +184,10 @@ body {
 .topright {
     position: absolute;
     right: 80px;
-    text-align: right;
+    text-align: left;
     font-family: Comic Sans MS, Microsoft YaHei;
     font-size: 50px;
-    width: 1000px;
+    width: 650px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
